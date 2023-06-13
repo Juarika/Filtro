@@ -1,0 +1,18 @@
+html {
+    background-image: url(./images/background1.svg);
+}
+
+
+
+.card {
+    width: 18rem;
+}
+.nav-link{
+    color: white !important;
+
+}
+.nav-pills .nav-link.active,
+.show>.nav-pills .nav-link{
+    background: #005A07 !important;
+    color: black !important;
+}
