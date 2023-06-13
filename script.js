@@ -105,16 +105,18 @@ function agregarJuego(e){
     let nombreJuego = document.getElementById('formNombreJuego').value;
     let valorLicencia = document.getElementById('formPrecio').value;
     let tematica = document.getElementById('formTematica').value;
+    let url = document.getElementById('formUrl').value;
+    if (url == '') {
+        url = `./images/cards-img/nothing.png`;
+    }
     let juego = {
         id: idGame,
         nombre: nombreJuego,
         tematica: tematica,
         valorLicencia: valorLicencia,
         fidelización: parseInt(valorLicencia * 0.2),
-        srcImage: ''
+        srcImage: url
     }
-    console.log(juego)
-    console.log(juegos)
     idGame++;
     juegos.push(juego);
     rellenarJuegos();
@@ -128,15 +130,17 @@ function rellenarJuegos() {
     id = 0;
     juegos.forEach(juego => {
         const div = document.createElement('div');
-        div.classList = "card m-1";
+        div.classList = "card m-1 bg-dark";
         div.id = 'juego' + id;
         div.innerHTML = `
             <img src="${juego.srcImage}" class="card-img-top" alt="${juego.nombre}">
             <div class="card-body">
-                <h3 class="card-title">${juego.nombre}</h3>
+                <h3 class="card-title text-center">${juego.nombre}</h3>
+                <span class="card-text">${juego.tematica}</span>
+                <br>
                 <span class="card-text">$${juego.valorLicencia}</span>
             </div>
-            <div class="card-footer">    
+            <div class="card-footer text-center">    
                 <button type="button" class="btn btn-outline-danger" onclick="eliminarJuego(${id})">Eliminar</button>
             </div>`
         rowJuegos.appendChild(div);
@@ -180,7 +184,7 @@ function comprar(e) {
     div.className = 'show'
     div.innerHTML = `
     <div class="card card-body" style="width: 500px;">
-        <h3 class="mb-4">Factura</h3>
+        <h3 class="mb-4 text-center fs-2">Factura</h3>
         <div class="position-absolute top-0 start-100 translate-middle">
             <button type="button" class="btn-close" id="cerrar"></button>
         </div>

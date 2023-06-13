@@ -2,8 +2,41 @@ html {
     background-image: url(./images/background1.svg);
 }
 
+body {
+    font-family: 'Orbitron', sans-serif !important;
 
+}
 
+.wrap h1 img {
+    width: 5rem;
+    height: 5rem;
+}
+
+.card img {
+    height: 100%;
+}
+
+h1 {
+    font-size: 5rem;
+    background: linear-gradient( yellow,#005A07);
+    -webkit-background-clip: text;
+    color: transparent;  
+}
+
+.collapse{
+    display: flex;
+    justify-content: center;
+  }
+h2{
+    background: linear-gradient( #005A07, yellow) !important;
+    -webkit-background-clip: text !important;
+    color: transparent !important;  
+}
+
+#pills-tabContent h2 {
+    text-align: center;
+    font-size: 3rem;
+}
 .card {
     width: 18rem;
 }
@@ -12,7 +45,11 @@ html {
 
 }
 .nav-pills .nav-link.active,
-.show>.nav-pills .nav-link{
-    background: #005A07 !important;
+.show > .nav-pills .nav-link{
+    background: linear-gradient( #005A07, yellow, #005A07) !important;
     color: black !important;
 }
+.aling-input {
+    text-align: center;
+}
+

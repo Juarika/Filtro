@@ -38,7 +38,7 @@ let juegos = [
         tematica: 'Deporte',
         valorLicencia: 120,
         fidelización: 24,
-        srcImage: './images/download.jpg'
+        srcImage: './images/cards-img/fifa.png'
     },
     {
         id: 1,
@@ -46,7 +46,7 @@ let juegos = [
         tematica: 'Terror',
         valorLicencia: 130,
         fidelización: 26,
-        srcImage: ''
+        srcImage: './images/cards-img/resident.png'
     },
     {
         id: 2,
@@ -54,14 +54,22 @@ let juegos = [
         tematica: 'Aventura',
         valorLicencia: 110,
         fidelización: 22,
-        srcImage: ''
+        srcImage: './images/cards-img/god.png'
     },
     {
         id: 3,
         nombre: 'Call of Duty',
-        tematica: 'Ciencia Ficcion',
+        tematica: 'Accion',
         valorLicencia: 150,
         fidelización: 30,
-        srcImage: ''
+        srcImage: './images/cards-img/cod.png'
     },
+    {
+        id: 4,
+        nombre: 'Spider-Man',
+        tematica: 'Aventura',
+        valorLicencia: 200,
+        fidelización: 60,
+        srcImage: './images/cards-img/spider-man.png'
+    }
 ]
