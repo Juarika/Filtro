@@ -54,9 +54,10 @@ function rellenarTablaCliente() {
 }
 
 function eliminarCliente(id) {
-    let eliminado = document.getElementById('cliente'+id);
-    tableBody.removeChild(eliminado);
     clientes.splice(id, 1);
+    rellenarTablaCliente();
+    agregarSelects();
+    agregarPuntos();
 }
 
 function editar(id) {
@@ -134,7 +135,7 @@ function rellenarJuegos() {
         div.classList = "card m-1 bg-dark";
         div.id = 'juego' + id;
         div.innerHTML = `
-            <img src="${juego.srcImage}" class="card-img-top" alt="${juego.nombre}">
+            <img src="${juego.srcImage}" class="card-img-top mt-2" alt="${juego.nombre}">
             <div class="card-body">
                 <h3 class="card-title text-center">${juego.nombre}</h3>
                 <span class="card-text">${juego.tematica}</span>
@@ -151,9 +152,10 @@ function rellenarJuegos() {
 }
 
 function eliminarJuego(id) {
-    let eliminado = document.getElementById('juego'+id);
-    rowJuegos.removeChild(eliminado);
     juegos.splice(id, 1);
+    rellenarJuegos();
+    agregarSelects();
+    agregarPuntos();
 }
 
 function agregarSelects() {
