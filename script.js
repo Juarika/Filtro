@@ -1,9 +1,10 @@
+// Para tratar HTML
 let tableBody = document.getElementById('tableBody');
-let idGame = juegos.length;
 let rowJuegos = document.getElementById('rowJuegos');
 let tablePuntos = document.getElementById('tableBodyPuntos');
+let idGame = juegos.length;
 
-
+// Funciones
 function init(){
     rellenarTablaCliente();
     rellenarJuegos();
@@ -45,29 +46,29 @@ function rellenarTablaCliente() {
         <td>${cliente.correo}</td>
         <td>${cliente.telefono}</td>
         <td>${cliente.nacionalidad}</td>
-        <td><button type="button" class="btn btn-danger" onclick="eliminar(${id})">Eliminar</button> <button type="button" class="btn btn-success" onclick="editar(${id})" id="botonEditar">Editar</button></td>`
-        tableBody.appendChild(row)
+        <td><button type="button" class="btn btn-danger" onclick="eliminarCliente(${id})">Eliminar</button> <button type="button" class="btn btn-success" onclick="editar(${id})" id="botonEditar">Editar</button></td>`
+        tableBody.appendChild(row);
         id++;
     }
     
 }
 
-function eliminar(id) {
+function eliminarCliente(id) {
     let eliminado = document.getElementById('cliente'+id);
     tableBody.removeChild(eliminado);
     clientes.splice(id, 1);
 }
 
 function editar(id) {
-    let form = document.getElementById('formAgregar')
-    let inputs = form.getElementsByTagName('input')
+    let form = document.getElementById('formAgregar');
+    let inputs = form.getElementsByTagName('input');
     let [nombre, apellido, identificacion, telefono, nacimiento, correo, nacionalidad] = inputs
     if (nombre.value != '' || apellido.value !='' || telefono.value !='' || identificacion.value !='' || nacimiento.value !='' || correo.value !='' || nacionalidad.value !='' ) {
-        alert ('Esta editando otro cliente')
+        alert ('Esta editando otro cliente');
         return
     }
     let cliente = clientes[id];
-    let fecha_nac = cliente.nacimiento
+    let fecha_nac = cliente.nacimiento;
     let cambiada = fecha_nac.split("/").join("-");
     nombre.value = cliente.nombres;
     apellido.value = cliente.apellidos;
@@ -76,7 +77,7 @@ function editar(id) {
     nacimiento.value = cambiada;
     correo.value = cliente.correo;
     nacionalidad.value = cliente.nacionalidad;
-    eliminar(id);
+    eliminarCliente(id);
 }
 
 function buscar() {
@@ -156,8 +157,8 @@ function eliminarJuego(id) {
 }
 
 function agregarSelects() {
-    document.getElementById('selectCliente').innerHTML = '<option selected disabled value="">Elige...</option>'
-    document.getElementById('selectJuego').innerHTML = '<option selected disabled value="">Elige...</option>'
+    document.getElementById('selectCliente').innerHTML = '<option selected disabled value="">Elige...</option>';
+    document.getElementById('selectJuego').innerHTML = '<option selected disabled value="">Elige...</option>';
     clientes.forEach(cliente => {
         let opcion = document.createElement('option');
         opcion.value = clientes.indexOf(cliente);
@@ -181,12 +182,12 @@ function comprar(e) {
     clientes[opcionCliente].puntos += juegos[opcionJuego].fidelización;
     let precioTotal = (precio*1.16) + (precio*0.04);
     let td = clientes[opcionCliente].nombres + ' ' + clientes[opcionCliente].apellidos;
-    div.className = 'show'
+    div.className = 'show';
     div.innerHTML = `
     <div class="card card-body" style="width: 500px;">
         <h3 class="mb-4 text-center fs-2">Factura</h3>
-        <div class="position-absolute top-0 start-100 translate-middle">
-            <button type="button" class="btn-close" id="cerrar"></button>
+        <div class="position-absolute top-0 end-0">
+            <button type="button" class="btn-close btn-danger" id="cerrar"></button>
         </div>
         <table class="g-2">
             <tr><th>Cliente</th><td class="text-end">${td}</td></tr>
@@ -215,12 +216,14 @@ function agregarPuntos() {
             <td>${cliente.apellidos}</td>
             <td>${cliente.puntos}</td>
         </tr>`
-        tablePuntos.appendChild(row)
+        tablePuntos.appendChild(row);
     })
 }
 
+// Iniciar Funciones Necesarias
 init();
 
+// Eventos
 document.getElementById('formAgregar').addEventListener('submit', agregarCliente);
 document.getElementById('formGestion').addEventListener('submit', agregarJuego);
 document.getElementById('searchInput').addEventListener('input', buscar);

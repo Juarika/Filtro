@@ -3,8 +3,8 @@ html {
 }
 
 body {
-    font-family: 'Orbitron', sans-serif !important;
-
+    font-family: 'Orbitron', sans-serif;
+    position: relative;
 }
 
 .wrap h1 img {
@@ -12,44 +12,44 @@ body {
     height: 5rem;
 }
 
-.card img {
-    height: 100%;
-}
-
 h1 {
     font-size: 5rem;
     background: linear-gradient( yellow,#005A07);
+    -webkit-background-clip: text; 
+    color: transparent;  
+}
+
+h2{
+    text-align: center;
+    font-size: 3rem;
+    background: linear-gradient( #005A07, yellow);
     -webkit-background-clip: text;
     color: transparent;  
 }
 
-.collapse{
-    display: flex;
-    justify-content: center;
-  }
-h2{
-    background: linear-gradient( #005A07, yellow) !important;
-    -webkit-background-clip: text !important;
-    color: transparent !important;  
+.nav-link{
+    color: white;
 }
 
-#pills-tabContent h2 {
-    text-align: center;
-    font-size: 3rem;
+.nav-link:hover {
+    color: #005A07;
 }
+
+.nav-pills .nav-link.active, .show > .nav-link{
+    background: linear-gradient( #005A07, yellow, #005A07);
+    color: black;
+}
+
 .card {
     width: 18rem;
 }
-.nav-link{
-    color: white !important;
 
+.card img {
+    height: 100%;
 }
-.nav-pills .nav-link.active,
-.show > .nav-pills .nav-link{
-    background: linear-gradient( #005A07, yellow, #005A07) !important;
-    color: black !important;
-}
-.aling-input {
-    text-align: center;
+
+footer img {
+    width: 3rem;
+    height: 3rem;
 }
 

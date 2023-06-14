@@ -19,11 +19,12 @@
 
 </head>
 <body class="bg-transparent text-white">
-        <div class="wrap d-flex justify-content-center">
-            <h1>Campus <img src="./images/juegos.png" alt=""> <span>GameSoft</span></h1>
-        </div>
-        <div class="wrap sticky-top">
-
+    <!-- Header -->
+    <header class="wrap d-flex justify-content-center">
+        <h1>Campus <img src="./images/juegos.png" alt="logo"> <span>GameSoft</span></h1>
+    </header>
+    <!-- Navbar -->
+    <div class="wrap sticky-top">
         <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container-fluid">
                 <h2 class="navbar-brand">Campus</h2>
@@ -36,17 +37,16 @@
                             <button class="nav-link active" id="pills-clientes-tab" data-bs-toggle="pill" data-bs-target="#pills-clientes" type="button" role="tab" aria-controls="pills-clientes" aria-selected="true">Clientes</button>
                         </li>
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="pills-rutas-tab" data-bs-toggle="pill" data-bs-target="#pills-rutas" type="button" role="tab" aria-controls="pills-rutas" aria-selected="false">Gestion</button>
+                            <button class="nav-link" id="pills-juegos-tab" data-bs-toggle="pill" data-bs-target="#pills-juegos" type="button" role="tab" aria-controls="pills-juegos" aria-selected="false">Juegos</button>
                         </li>
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="pills-tiquetes-tab" data-bs-toggle="pill" data-bs-target="#pills-tiquetes" type="button" role="tab" aria-controls="pills-tiquetes" aria-selected="false">Compra</button>
+                            <button class="nav-link" id="pills-compras-tab" data-bs-toggle="pill" data-bs-target="#pills-compras" type="button" role="tab" aria-controls="pills-compras" aria-selected="false">Compra</button>
                         </li>
                         <li class="nav-item" role="presentation">
                             <button class="nav-link" id="pills-fidelizacion-tab" data-bs-toggle="pill" data-bs-target="#pills-fidelizacion" type="button" role="tab" aria-controls="pills-fidelizacion" aria-selected="false">Fidelizacion</button>
                         </li>
                     </ul>
-                </ul>
-              </div>
+                </div>
             </div>
         </nav>
     </div>
@@ -116,19 +116,19 @@
                             </tr>
                         </thead>
                         <tbody id="tableBody">
-
+                            <!-- Insertado Js -->
                         </tbody>
                     </table>
                 </div>
             </div>
             <!-- Gestión de Video Juegos -->
-            <div class="tab-pane fade" id="pills-rutas" role="tabpanel" aria-labelledby="pills-rutas-tab">
+            <div class="tab-pane fade" id="pills-juegos" role="tabpanel" aria-labelledby="pills-juegos-tab">
                 <h2>Gestion Video Juegos</h2>
                 <div class="container">
                     <form class="row g-6" id="formGestion">
                         <!-- Nombre -->
                         <div class="col-3">
-                            <label for="formNombre" class="form-label">Nombre del Video Juego</label>
+                            <label for="formNombreJuego" class="form-label">Nombre del Video Juego</label>
                             <input type="text" class="form-control" id="formNombreJuego">
                         </div>
                         <!-- Precio -->
@@ -164,18 +164,19 @@
                 </div>
                 <div class="container">
                     <div class="row justify-content-center" id="rowJuegos">
-                        
+                        <!-- Insertado Js -->
                     </div>
                 </div>
             </div>
             <!-- Compra Video Juegos -->
-            <div class="tab-pane fade" id="pills-tiquetes" role="tabpanel" aria-labelledby="pills-tiquetes-tab">
+            <div class="tab-pane fade" id="pills-compras" role="tabpanel" aria-labelledby="pills-compras-tab">
                 <h2>Compra de Video Juegos</h2>
                 <div class="container">
                     <form class="row g-6" id="formCompra">
                         <div class="col-md-6">
                             <label for="selectCliente" class="form-label">Cliente</label>
                             <select class="form-select" id="selectCliente" required>
+                                <!-- Insertado Js -->
                             </select>
                             <div class="invalid-feedback">
                                 Selecciona un cliente válido.
@@ -184,6 +185,7 @@
                         <div class="col-md-6">
                             <label for="selectJuego" class="form-label">Juego</label>
                             <select class="form-select" id="selectJuego" required>
+                                <!-- Insertado Js -->
                             </select>
                             <div class="invalid-feedback">
                                 Selecciona una Juego válido.
@@ -193,10 +195,9 @@
                             <button class="col-md-3 btn btn-light" type="submit">Agregar</button>
                         </div>
                     </form>                
-                    
                     <div class="container text-black d-flex justify-content-center">
-                        <div class="collapse" id="factura">
-                            
+                        <div class="collapse d-flex justify-content-center" id="factura">
+                            <!-- Insertado Js -->
                         </div>
                     </div>
                 </div>
@@ -214,15 +215,25 @@
                             </tr>
                         </thead>
                         <tbody id="tableBodyPuntos">
-                            
+                            <!-- Insertado Js -->
                         </tbody>
                     </table>
                   </div>
             </div>
         </div>
     </main>
-
-
+    <!-- Footer -->
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 fixed-bottom">
+        <div class="col-md-4 d-flex align-items-center">
+            <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+                <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
+            </a>
+            <span class="mb-3 mb-md-0 text-muted">© 2023 Campus GameSoft, Inc</span>
+        </div>
+        <div class="nav col-md-4 justify-content-around d-flex">
+            <img src="./images/juegos.png" alt="">
+        </div>
+    </footer>    
     <script src="./datos.js"></script>
     <script src="./script.js"></script>
 </body>
